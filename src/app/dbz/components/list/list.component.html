@@ -3,17 +3,17 @@
   <li *ngFor="let character of characterList; let i = index; let isFirst = first; let istLast = last;
               let isEven = even; let isOdd = odd "
 
-    class="list-group-item"
+    class="list-group-item d-flex justify-content-between aling-item-center"
     [ngClass]="{ 'list-group-item-dark': istLast,
                   'list-group-item-primary' : isEven }">
 
-    <span class="text-primary">{{ i }}. </span>
-
+  <div>
+    <span class="text-primary">{{ i + 1 }}. </span>
     <span>{{ character.name }}</span>
-
     <strong>- Power: </strong>
-
     <span>{{ character.power }}</span>
+  </div>
+    <button class="btn btn-danger" (click)="onDeleteCharacter(i)">X</button>
 
   </li>
 

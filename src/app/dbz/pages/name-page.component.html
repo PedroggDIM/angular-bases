@@ -5,7 +5,8 @@
  <div class="col">
 
 <!--COMPONENTE list con el listado-->
-<dbz-list [characterList]="characters"></dbz-list>
+<dbz-list [characterList]="dbzService.characters" (onDelete)="dbzService.onDeleteCharacter($event)"></dbz-list>
+
 
  </div>
 
@@ -13,7 +14,7 @@
 
 <!--  {{ characters }}  -->
  <!--COMPONENTE add-character-->
-<dbz-add-character></dbz-add-character>
+<dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)"></dbz-add-character>
 
 
  </div>
